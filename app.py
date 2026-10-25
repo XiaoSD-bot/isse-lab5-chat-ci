@@ -170,7 +170,6 @@ def delete_message(message_id):
     """删除指定 id 的聊天记录。"""
     for index, record in enumerate(messages):
         if record["id"] == message_id:
-            messages.pop(index)
             return jsonify({"id": message_id, "deleted": True})
 
     return jsonify({"error": f"id 为 {message_id} 的聊天记录不存在"}), 404
